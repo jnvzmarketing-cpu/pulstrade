@@ -1,0 +1,178 @@
+//@version=5
+indicator("Pulstrade FIB Signal v3 - Quality Filter", overlay=true, max_bars_back=500)
+
+// ══════════════════════════════════════════════════════
+// INPUTS
+// ══════════════════════════════════════════════════════
+timeframeInput = input.string("15", "Min Timeframe", options=["15", "30", "60"])
+minConfidence  = input.int(75, "Min Confidence %", minval=60, maxval=95)
+requireH1      = input.bool(true, "Require H1 Confirmation")
+requireH4      = input.bool(true, "Require H4 Confirmation")
+onlyGoldenFIB  = input.bool(false, "Only 61.8% FIB Signals")
+useSessionFilter = input.bool(true, "Session Filter (London + NY)")
+
+// ══════════════════════════════════════════════════════
+// SESSION FILTER — London 07:00-15:00 UTC, NY 13:00-21:00 UTC
+// ══════════════════════════════════════════════════════
+londonSession = time(timeframe.period, "0700-1500:23456")
+nySession     = time(timeframe.period, "1300-2100:23456")
+inSession     = not useSessionFilter or (not na(londonSession) or not na(nySession))
+
+// ══════════════════════════════════════════════════════
+// SWING HIGH/LOW — für FIB Berechnung
+// ══════════════════════════════════════════════════════
+swingLen = 20
+swingHigh = ta.highest(high, swingLen)
+swingLow  = ta.lowest(low,  swingLen)
+fibRange  = swingHigh - swingLow
+
+// FIB Levels
+fib236 = swingHigh - fibRange * 0.236
+fib382 = swingHigh - fibRange * 0.382
+fib500 = swingHigh - fibRange * 0.500
+fib618 = swingHigh - fibRange * 0.618
+fib786 = swingHigh - fibRange * 0.786
+
+// ══════════════════════════════════════════════════════
+// MULTI-TIMEFRAME CONFIRMATION
+// ══════════════════════════════════════════════════════
+rsi14    = ta.rsi(close, 14)
+rsiH1    = request.security(syminfo.tickerid, "60",  ta.rsi(close, 14))
+rsiH4    = request.security(syminfo.tickerid, "240", ta.rsi(close, 14))
+emaH1    = request.security(syminfo.tickerid, "60",  ta.ema(close, 20))
+emaH4    = request.security(syminfo.tickerid, "240", ta.ema(close, 50))
+closeH1  = request.security(syminfo.tickerid, "60",  close)
+closeH4  = request.security(syminfo.tickerid, "240", close)
+
+// H1 + H4 trend
+h1Bullish = closeH1 > emaH1 and rsiH1 > 40 and rsiH1 < 70
+h1Bearish = closeH1 < emaH1 and rsiH1 < 60 and rsiH1 > 30
+h4Bullish = closeH4 > emaH4 and rsiH4 > 40 and rsiH4 < 70
+h4Bearish = closeH4 < emaH4 and rsiH4 < 60 and rsiH4 > 30
+
+// ══════════════════════════════════════════════════════
+// PATTERN DETECTION — Doji + Pin Bar + Engulfing
+// ══════════════════════════════════════════════════════
+body     = math.abs(close - open)
+fullRange = high - low
+upperWick = high - math.max(close, open)
+lowerWick = math.min(close, open) - low
+
+isDoji      = body < fullRange * 0.25
+isPinBarBull = lowerWick > body * 2.5 and lowerWick > upperWick * 2
+isPinBarBear = upperWick > body * 2.5 and upperWick > lowerWick * 2
+isEngulfBull = close > open and close > high[1] and open < low[1]
+isEngulfBear = close < open and close < low[1]  and open > high[1]
+
+bullPattern = isPinBarBull or isEngulfBull or (isDoji and close > open)
+bearPattern = isPinBarBear or isEngulfBear or (isDoji and close < open)
+
+patternName(isBull) =>
+    isBull ?
+        (isPinBarBull ? "Pin Bar Bull" : isEngulfBull ? "Engulfing Bull" : "Doji Bull") :
+        (isPinBarBear ? "Pin Bar Bear" : isEngulfBear ? "Engulfing Bear" : "Doji Bear")
+
+// ══════════════════════════════════════════════════════
+// ATR — für SL/TP Berechnung
+// ══════════════════════════════════════════════════════
+atr = ta.atr(14)
+
+// ══════════════════════════════════════════════════════
+// FIB TOUCH DETECTION — Preis berührt FIB Level
+// ══════════════════════════════════════════════════════
+fibTolerance = atr * 0.3
+
+touchFib(fibLevel) =>
+    low <= fibLevel + fibTolerance and high >= fibLevel - fibTolerance
+
+touch618 = touchFib(fib618)
+touch500 = touchFib(fib500)
+touch382 = touchFib(fib382)
+touch236 = touchFib(fib236)
+touch786 = touchFib(fib786)
+
+fibLevelName() =>
+    touch618 ? "61.8%" : touch500 ? "50.0%" : touch382 ? "38.2%" : touch236 ? "23.6%" : touch786 ? "78.6%" : "none"
+
+fibLevelValue() =>
+    touch618 ? fib618 : touch500 ? fib500 : touch382 ? fib382 : touch236 ? fib236 : touch786 ? fib786 : close
+
+anyFibTouch = touch618 or touch500 or touch382 or touch236 or touch786
+goldenFibTouch = touch618
+
+// ══════════════════════════════════════════════════════
+// CONFIDENCE SCORE — 0-100
+// ══════════════════════════════════════════════════════
+calcConfidence(isBull) =>
+    score = 0
+    // FIB level quality
+    score := score + (touch618 ? 30 : touch500 ? 22 : touch382 ? 18 : touch236 ? 12 : touch786 ? 10 : 0)
+    // Pattern strength
+    score := score + (isBull ? (isPinBarBull ? 25 : isEngulfBull ? 22 : isDoji ? 15 : 0) : (isPinBarBear ? 25 : isEngulfBear ? 22 : isDoji ? 15 : 0))
+    // H1 confirmation
+    score := score + ((isBull and h1Bullish) or (not isBull and h1Bearish) ? 20 : 0)
+    // H4 confirmation
+    score := score + ((isBull and h4Bullish) or (not isBull and h4Bearish) ? 15 : 0)
+    // RSI not extreme
+    score := score + (isBull ? (rsi14 < 60 and rsi14 > 30 ? 10 : 0) : (rsi14 > 40 and rsi14 < 70 ? 10 : 0))
+    score
+
+// ══════════════════════════════════════════════════════
+// SIGNAL CONDITIONS
+// ══════════════════════════════════════════════════════
+fibCondition = onlyGoldenFIB ? goldenFibTouch : anyFibTouch
+h1Condition  = not requireH1 or (h1Bullish or h1Bearish)
+h4Condition  = not requireH4 or (h4Bullish or h4Bearish)
+
+buySignalRaw  = inSession and fibCondition and bullPattern and h1Bullish and (not requireH4 or h4Bullish) and rsi14 < 65
+sellSignalRaw = inSession and fibCondition and bearPattern and h1Bearish and (not requireH4 or h4Bearish) and rsi14 > 35
+
+buyConf  = calcConfidence(true)
+sellConf = calcConfidence(false)
+
+buySignal  = buySignalRaw  and buyConf  >= minConfidence
+sellSignal = sellSignalRaw and sellConf >= minConfidence
+
+// ══════════════════════════════════════════════════════
+// SL / TP — ATR basiert + FIB extension
+// ══════════════════════════════════════════════════════
+slMultiplier = 1.5
+tp1Multiplier = 3.0
+tp2Multiplier = 6.0
+
+buySL  = low  - atr * slMultiplier
+buySL  := math.min(buySL, fibLevelValue() - atr * 0.5)
+buyTP1 = close + atr * tp1Multiplier
+buyTP2 = close + atr * tp2Multiplier
+
+sellSL  = high + atr * slMultiplier
+sellSL  := math.max(sellSL, fibLevelValue() + atr * 0.5)
+sellTP1 = close - atr * tp1Multiplier
+sellTP2 = close - atr * tp2Multiplier
+
+// ══════════════════════════════════════════════════════
+// ALERTS
+// ══════════════════════════════════════════════════════
+buyMsg = '{"action":"BUY","ticker":"XAU/USD","price":' + str.tostring(close, "#.##") + ',"sl":' + str.tostring(buySL, "#.##") + ',"tp1":' + str.tostring(buyTP1, "#.##") + ',"tp2":' + str.tostring(buyTP2, "#.##") + ',"fib_level":"' + fibLevelName() + '","pattern":"' + patternName(true) + '","confidence":' + str.tostring(buyConf) + ',"rsi":' + str.tostring(math.round(rsi14, 1)) + ',"atr":' + str.tostring(math.round(atr, 2)) + ',"timeframe":"' + timeframe.period + '","mtf":{"h1":' + str.tostring(h1Bullish) + ',"h4":' + str.tostring(h4Bullish) + ',"d1":false}}'
+
+sellMsg = '{"action":"SELL","ticker":"XAU/USD","price":' + str.tostring(close, "#.##") + ',"sl":' + str.tostring(sellSL, "#.##") + ',"tp1":' + str.tostring(sellTP1, "#.##") + ',"tp2":' + str.tostring(sellTP2, "#.##") + ',"fib_level":"' + fibLevelName() + '","pattern":"' + patternName(false) + '","confidence":' + str.tostring(sellConf) + ',"rsi":' + str.tostring(math.round(rsi14, 1)) + ',"atr":' + str.tostring(math.round(atr, 2)) + ',"timeframe":"' + timeframe.period + '","mtf":{"h1":' + str.tostring(h1Bearish) + ',"h4":' + str.tostring(h4Bearish) + ',"d1":false}}'
+
+alertcondition(buySignal,  title="BUY Signal",  message=buyMsg)
+alertcondition(sellSignal, title="SELL Signal", message=sellMsg)
+
+// ══════════════════════════════════════════════════════
+// VISUALS
+// ══════════════════════════════════════════════════════
+plot(fib618, "FIB 61.8%", color=color.new(color.yellow, 40), linewidth=1, style=plot.style_line)
+plot(fib500, "FIB 50.0%", color=color.new(color.orange, 50), linewidth=1)
+plot(fib382, "FIB 38.2%", color=color.new(color.purple, 50), linewidth=1)
+
+plotshape(buySignal,  style=shape.triangleup,   location=location.belowbar, color=color.green, size=size.normal, title="BUY")
+plotshape(sellSignal, style=shape.triangledown, location=location.abovebar, color=color.red,   size=size.normal, title="SELL")
+
+// Labels mit Confidence
+if buySignal
+    label.new(bar_index, low - atr, "BUY " + str.tostring(buyConf) + "%\n" + fibLevelName(), color=color.green, textcolor=color.white, style=label.style_label_up, size=size.small)
+
+if sellSignal
+    label.new(bar_index, high + atr, "SELL " + str.tostring(sellConf) + "%\n" + fibLevelName(), color=color.red, textcolor=color.white, style=label.style_label_down, size=size.small)

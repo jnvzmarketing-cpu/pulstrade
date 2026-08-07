@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "3520181018",
+    "project_id": "pulstrade-fb01a",
+    "storage_bucket": "pulstrade-fb01a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3520181018:android:a9aee2d1c2d114ad6f32a3",
+        "android_client_info": {
+          "package_name": "com.pulstrade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3520181018-dfemnl2dh9405t5ivmsnbgla73svlk7n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pulstrade",
+            "certificate_hash": "67cbee7fb11c20e6d89d1cced4d27bbeb95f26e0"
+          }
+        },
+        {
+          "client_id": "3520181018-n9fpjac62q2meg2pprchvar6m8200stn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pulstrade",
+            "certificate_hash": "6923efe5365398ef94c9dc767c3f42d76c7c2db9"
+          }
+        },
+        {
+          "client_id": "3520181018-ppm93c6aredmejcdtaknfg92g623k7dc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pulstrade",
+            "certificate_hash": "277d62ff46252a8f2243be6923b06f31ee78cf1d"
+          }
+        },
+        {
+          "client_id": "3520181018-16qpt8io9m39tvotv93g3ckit9bip48f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgqqGV0DkD1tansbvFcsAyGfwUyyHJPYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3520181018-16qpt8io9m39tvotv93g3ckit9bip48f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "3520181018-74m18lv5vrb9i7ue6i8s1bu5geb8qcko.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pulstrade",
+                "app_store_id": "6762018999"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

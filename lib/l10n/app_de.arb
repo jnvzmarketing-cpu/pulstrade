@@ -1,0 +1,779 @@
+{
+  "@@locale": "de",
+  "navToday": "Heute",
+  "navSignals": "Signale",
+  "navStats": "Statistik",
+  "navNews": "News",
+  "navSettings": "Einstellungen",
+  "settingsTitle": "Einstellungen",
+  "sectionAppearance": "ERSCHEINUNGSBILD",
+  "modeSystem": "Automatisch",
+  "modeSystemSub": "Folgt deinem Gerät",
+  "modeLight": "Hell",
+  "modeLightSub": "Für Tageslicht · Papier statt Schwarz",
+  "modeDark": "Dunkel",
+  "modeDarkSub": "Obsidian · für die Session bei Nacht",
+  "sectionNotifications": "MITTEILUNGEN",
+  "notifAll": "Alle Signale",
+  "notifAllSub": "Push, sobald eine neue Zone live geht",
+  "minConfidence": "Mindest-Vertrauen",
+  "minConfidenceSub": "Zonen darunter werden ignoriert",
+  "sectionPlan": "DEIN PLAN",
+  "tradingProfile": "Trading-Profil",
+  "tradingProfileSub": "Kontogröße, Risiko, Ziel-Gewichte",
+  "autoTrading": "Auto-Trading",
+  "autoTradingSub": "MT5 verbinden · Trades laufen automatisch",
+  "sectionAdvanced": "ERWEITERT",
+  "beProtect": "Break-Even-Schutz",
+  "beProtectSub": "Nach Ziel 1 den Stop auf Einstand ziehen.\nStandard: AUS — unser Plan rechnet ohne.",
+  "footerVersion": "PulsTrade · XAU/USD · v1.1",
+  "statsTitle": "Ergebnisse",
+  "statsLiveBadge": "echte Daten · live",
+  "statsGatheringTitle": "Wir sammeln Ergebnisse",
+  "statsGatheringSub": "Sobald die ersten Zonen abgeschlossen sind,\nsiehst du hier die ehrliche Bilanz — nichts geschönt.",
+  "winRateLabel": "Win-Rate",
+  "winOutOf10": "{n} von 10 Trades gewinnen",
+  "@winOutOf10": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "closedSince": "{n} abgeschlossene Trades seit Start\nnichts geschönt · Stop zählt voll",
+  "@closedSince": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "tileAvg": "Ø pro Trade",
+  "tileBest": "Bester",
+  "tileWorst": "Schlechtester",
+  "ladderHeader": "WIE WEIT KOMMEN UNSERE ZONEN?",
+  "ladderEmpty": "Die Ziel-Leiter füllt sich, sobald die ersten Sniper-Zonen durchgelaufen sind.",
+  "ladderTarget": "Ziel {n}",
+  "@ladderTarget": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "ladderFootnote": "Darum sichern wir 40% schon am ersten Ziel.",
+  "cardOrders": "Orders {a} + {b}",
+  "@cardOrders": {
+    "placeholders": {
+      "a": {
+        "type": "String"
+      },
+      "b": {
+        "type": "String"
+      }
+    }
+  },
+  "cardEntry": "Entry {p}",
+  "@cardEntry": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "cardStop": "Stop {p}",
+  "@cardStop": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "confidencePct": "{p}% sicher",
+  "@confidencePct": {
+    "placeholders": {
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "openChevron": "öffnen ›",
+  "collapseCard": "einklappen ▴",
+  "statusFilledHit": "● Ziel {n} erreicht — du bist im Trade",
+  "@statusFilledHit": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "statusFilled": "● Order gefüllt — du bist im Trade",
+  "statusClosedHits": "✓ {when} abgeschlossen · {hits} von {total} Zielen",
+  "@statusClosedHits": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      },
+      "hits": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "statusClosedStop": "✓ {when} abgeschlossen · Stop erreicht",
+  "@statusClosedStop": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "statusCancelled": "○ abgelaufen — kein Verlust",
+  "statusWaitingDist": "○ wartet · Preis ist {d} Punkte entfernt",
+  "@statusWaitingDist": {
+    "placeholders": {
+      "d": {
+        "type": "String"
+      }
+    }
+  },
+  "statusWaiting": "○ wartet auf den Preis",
+  "whenToday": "heute",
+  "whenAtTime": "um {time} Uhr",
+  "@whenAtTime": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "whenYesterday": "gestern {time}",
+  "@whenYesterday": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "whenOnDate": "am {date} um {time}",
+  "@whenOnDate": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "focusTrade": "DEIN FOKUS-TRADE",
+  "focusInTrade": "du bist im Trade",
+  "focusHighestConf": "höchstes Vertrauen · {p}%",
+  "@focusHighestConf": {
+    "placeholders": {
+      "p": {
+        "type": "int"
+      }
+    }
+  },
+  "oneZoneEnough": "Eine Zone reicht. Mehr Trades sind nicht mehr Gewinn.",
+  "moreChances": "WEITERE CHANCEN · OPTIONAL",
+  "moreZones": "WEITERE ZONEN · OPTIONAL · {n}",
+  "@moreZones": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "doneToday": "HEUTE ERLEDIGT · {n}",
+  "@doneToday": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "hiddenByFilter": "{n} Zone(n) unter deinem Vertrauens-Filter (ab {min}%) · Einstellungen",
+  "@hiddenByFilter": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "allFilteredTitle": "Heute nichts über {min}%",
+  "@allFilteredTitle": {
+    "placeholders": {
+      "min": {
+        "type": "int"
+      }
+    }
+  },
+  "allFilteredSub": "{n} Zone(n) liegen unter deinem Vertrauens-Filter.\nKein Trade ist auch eine Entscheidung — oder senke den Filter in den Einstellungen.",
+  "@allFilteredSub": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "segHistory": "Verlauf",
+  "expiredInHistory": "Abgelaufene Zonen findest du im Verlauf",
+  "emptySniperTitle": "Keine aktiven Zonen",
+  "emptySniperSub": "Die nächsten Zonen kommen vor der nächsten Session — siehe Countdown im Heute-Tab.",
+  "emptyExecutorTitle": "Kein Markt-Signal aktiv",
+  "emptyExecutorSub": "Der Executor meldet sich, sobald eines unserer Setups auslöst. Push ist an.",
+  "emptyHistoryTitle": "Noch kein Verlauf",
+  "emptyHistorySub": "Hier landen abgeschlossene und abgelaufene Signale — mit ehrlicher Bilanz.",
+  "historySniperZone": "Sniper-Zone",
+  "historyExpired": "○ abgelaufen — Preis kam nicht in die Zone, kein Verlust",
+  "historyTargets": "✓ {hits} von {total} Zielen",
+  "@historyTargets": {
+    "placeholders": {
+      "hits": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "historyStop": "✗ Stop erreicht · −1.00R",
+  "agoM": "vor {n}m",
+  "@agoM": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "agoH": "vor {n}h",
+  "@agoH": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "agoD": "vor {n}d",
+  "@agoD": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "nextZonesIn": "Nächste Zonen in",
+  "allZonesDone": "Alle Zonen durch — nächste in",
+  "preSessionAnalysis": "Vor der {session}-Session analysieren wir\nden Markt und legen die Zonen für dich fest.",
+  "@preSessionAnalysis": {
+    "placeholders": {
+      "session": {
+        "type": "String"
+      }
+    }
+  },
+  "pushOn": "Push ist an — wir wecken dich",
+  "yesterdaySummary": "Gestern: {n} Zonen · {result}",
+  "@yesterdaySummary": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "result": {
+        "type": "String"
+      }
+    }
+  },
+  "inPlus": "im Plus",
+  "inMinus": "im Minus",
+  "cardYourOrdersSell": "DEINE {n} VERKAUFS-ORDERS (LIMIT)",
+  "@cardYourOrdersSell": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "cardYourOrdersBuy": "DEINE {n} KAUF-ORDERS (LIMIT)",
+  "@cardYourOrdersBuy": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "entrySection": "EINSTIEG",
+  "sessionMarketSignal": "{session} · Markt-Signal — direkt ausführbar",
+  "@sessionMarketSignal": {
+    "placeholders": {
+      "session": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionWaitSell": "{session} · Preis muss erst hochlaufen, dann verkaufen wir",
+  "@sessionWaitSell": {
+    "placeholders": {
+      "session": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionWaitBuy": "{session} · Preis muss erst runterkommen, dann kaufen wir",
+  "@sessionWaitBuy": {
+    "placeholders": {
+      "session": {
+        "type": "String"
+      }
+    }
+  },
+  "orderFilledAt": "{order} gefüllt",
+  "@orderFilledAt": {
+    "placeholders": {
+      "order": {
+        "type": "String"
+      }
+    }
+  },
+  "orderAtPrice": "{order} bei",
+  "@orderAtPrice": {
+    "placeholders": {
+      "order": {
+        "type": "String"
+      }
+    }
+  },
+  "stopYourProtection": "Stop Loss · dein Schutz",
+  "stopNeverMoves": "bleibt IMMER fest — wird nie verschoben",
+  "targetHitN": "Ziel {n} erreicht",
+  "@targetHitN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "targetN": "Ziel {n}",
+  "@targetN": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pctClosed": " · {w}% geschlossen",
+  "@pctClosed": {
+    "placeholders": {
+      "w": {
+        "type": "int"
+      }
+    }
+  },
+  "pctThenClose": " · dann {w}% schließen",
+  "@pctThenClose": {
+    "placeholders": {
+      "w": {
+        "type": "int"
+      }
+    }
+  },
+  "yourStake": "Dein Einsatz: {lots} Lots",
+  "@yourStake": {
+    "placeholders": {
+      "lots": {
+        "type": "String"
+      }
+    }
+  },
+  "atAccountRisk": "bei \\${acc} Konto · {r}% Risiko",
+  "@atAccountRisk": {
+    "placeholders": {
+      "acc": {
+        "type": "String"
+      },
+      "r": {
+        "type": "String"
+      }
+    }
+  },
+  "worstCase": "Schlimmster Fall: −\\${x}",
+  "@worstCase": {
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "allTargetsUsd": "Alle Ziele: +\\${x}",
+  "@allTargetsUsd": {
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "copiedMt5": "Werte kopiert — in MT5 einfügen",
+  "copyValues": "Werte kopieren",
+  "howApply": "Wie setze ich das um?",
+  "unlockPro": "Mit Pro freischalten",
+  "statusInTradeLive": "Du bist im Trade — Ziele werden live getrackt",
+  "statusClosedDone": "{hits} von {total} Zielen erreicht — abgeschlossen",
+  "@statusClosedDone": {
+    "placeholders": {
+      "hits": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "statusStopDone": "Stop erreicht — abgeschlossen",
+  "statusExpiredCard": "Preis kam nicht in die Zone — abgelaufen, kein Verlust",
+  "howToTitle": "So setzt du den Trade um",
+  "howToSub": "Dauert 2 Minuten in MT5 oder MT4.",
+  "howToS1Title": "{order}-Orders setzen",
+  "@howToS1Title": {
+    "placeholders": {
+      "order": {
+        "type": "String"
+      }
+    }
+  },
+  "howToS1Body": "Tippe in MT5 auf \"Neue Order\" → wähle \"{order}\". Setze 2 Orders — eine pro Entry-Preis aus der Karte. Teile deinen Einsatz: halbe Lots pro Order.",
+  "@howToS1Body": {
+    "placeholders": {
+      "order": {
+        "type": "String"
+      }
+    }
+  },
+  "howToS2Title": "Stop Loss bei BEIDEN Orders eintragen",
+  "howToS2Body": "Trage den Stop-Preis aus der Karte in beide Orders ein. Wichtig: Der Stop bleibt fest. Niemals verschieben — auch wenn es weh tut. Das ist die Regel.",
+  "howToS3Title": "Bei jedem Ziel einen Teil schließen",
+  "howToS3Body": "Wir schicken dir eine Push, wenn ein Ziel erreicht ist. Dann schließt du den angegebenen Prozent-Anteil (z.B. 40% bei Ziel 1) — der Rest läuft weiter.",
+  "detailZoneCreated": "Zone erstellt",
+  "detailOrderFilled": "Order {n} gefüllt @ {p}",
+  "@detailOrderFilled": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "detailInTradeStop": "du bist im Trade · Stop bleibt {p}",
+  "@detailInTradeStop": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "detailTargetHitAt": "Ziel {n} erreicht @ {p}",
+  "@detailTargetHitAt": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "detailPctClosed": "{w}% geschlossen · Gewinn gesichert",
+  "@detailPctClosed": {
+    "placeholders": {
+      "w": {
+        "type": "int"
+      }
+    }
+  },
+  "detailClosedTargets": "Abgeschlossen · {hits} von {total} Zielen",
+  "@detailClosedTargets": {
+    "placeholders": {
+      "hits": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "detailStopClosed": "Stop erreicht · abgeschlossen",
+  "detailCleanPlan": "sauber nach Plan gehandelt",
+  "detailLimitedPlan": "−1R · genau wie geplant begrenzt",
+  "detailExpiredTitle": "Abgelaufen — kein Verlust",
+  "detailExpiredSub": "Preis kam nicht in die Zone · Disziplin > Aktion",
+  "detailZoneTitle": "{dir} Zone · {session}",
+  "@detailZoneTitle": {
+    "placeholders": {
+      "dir": {
+        "type": "String"
+      },
+      "session": {
+        "type": "String"
+      }
+    }
+  },
+  "whatHappened": "WAS BISHER PASSIERT IST",
+  "openTargets": "OFFENE ZIELE",
+  "statOrders": "ORDERS",
+  "statStopFixed": "STOP · FEST",
+  "statTargets": "ZIELE",
+  "copiedShare": "Bilanz kopiert — teile sie wo du willst",
+  "shareTargetsLine": "Ziele: {h}/{t} erreicht",
+  "@shareTargetsLine": {
+    "placeholders": {
+      "h": {
+        "type": "int"
+      },
+      "t": {
+        "type": "int"
+      }
+    }
+  },
+  "shareStopFixed": "Stop (fest): {p}",
+  "@shareStopFixed": {
+    "placeholders": {
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "shareTargetLine": "Ziel {n}: {p}",
+  "@shareTargetLine": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      },
+      "p": {
+        "type": "String"
+      }
+    }
+  },
+  "loginFillAll": "Bitte alle Felder ausfüllen",
+  "loginEnterName": "Bitte gib deinen Namen ein",
+  "loginEmailFirst": "Gib zuerst deine E-Mail ein",
+  "loginResetSent": "✓ Reset-Mail verschickt",
+  "signIn": "Anmelden",
+  "createAccount": "Konto erstellen",
+  "fullName": "Voller Name",
+  "email": "E-Mail",
+  "password": "Passwort",
+  "forgotPassword": "Passwort vergessen?",
+  "legalNotice": "Mit dem Fortfahren stimmst du unseren AGB & Datenschutzbestimmungen zu",
+  "language": "SPRACHE",
+  "langSystem": "System",
+  "langSystemSub": "Folgt deinem Gerät",
+  "langGerman": "Deutsch",
+  "langEnglish": "English",
+  "hookTitle": "Hör auf, Gold zu jagen.\nLass es zu dir kommen.",
+  "hookSub": "Zonen-Signale mit kompletter Ziel-Leiter — passend zu deinem Konto, bevor der Preis überhaupt da ist.",
+  "statTracked": "Trades getrackt",
+  "statHistWin": "historische Win-Rate",
+  "hookCta": "Mein Profil erstellen",
+  "hookDuration": "Dauert etwa 60 Sekunden",
+  "secAboutYou": "ÜBER DICH",
+  "qExperience": "Wie lange tradest du schon?",
+  "expNew": "Ganz neu",
+  "exp1to3": "1–3 Jahre",
+  "exp3plus": "3+ Jahre",
+  "secOneDecision": "DIE EINE ENTSCHEIDUNG",
+  "qHowTrade": "Wie willst du traden?",
+  "decisionNote": "Das prägt deine Signale, deine Pushes — alles.",
+  "sniperDesc": "Ich setze Limit-Orders an Schlüssel-Zonen, bevor der Preis ankommt. Kein Hetzen, kein FOMO.",
+  "executorDesc": "Sag mir, wann ich sofort einsteige — Live-Markt-Signale.",
+  "recommended": "EMPFOHLEN",
+  "modeZoneLabel": "Limit-Zonen-Signale",
+  "modeLiveLabel": "Live-Markt-Signale",
+  "secLeak": "DEIN GRÖSSTES LECK",
+  "qCost": "Was kostet dich am meisten Geld?",
+  "leakFomo": "FOMO-Einstiege",
+  "leakEarlyExit": "Zu früher Ausstieg",
+  "leakLots": "Falsche Lot-Größen",
+  "leakNoPlan": "Kein Plan nach dem Einstieg",
+  "leakMissed": "Verpasste Einstiege",
+  "secNumbers": "DEINE ZAHLEN",
+  "accountSizeLabel": "Kontogröße",
+  "riskPerTrade": "Risiko pro Trade",
+  "riskNever": "Du riskierst \\${r} pro Trade — nie mehr.",
+  "@riskNever": {
+    "placeholders": {
+      "r": {
+        "type": "String"
+      }
+    }
+  },
+  "numbersNote": "Jedes Signal kommt mit exakten Lot-Größen für diese Zahlen.",
+  "secRiskProfile": "RISIKO-PROFIL",
+  "qPicky": "Wie wählerisch sollen deine Signale sein?",
+  "conservative": "Konservativ",
+  "balanced": "Ausgewogen",
+  "aggressive": "Aggressiv",
+  "conservativeSub": "Nur die stärksten Setups (80%+ Vertrauen). Weniger, dafür sauberer.",
+  "balancedSub": "Starke Setups (72%+). Der Sweet Spot für die meisten.",
+  "aggressiveSub": "Jedes qualifizierte Setup (65%+). Maximale Chancen.",
+  "secTimes": "DEINE ZEITEN",
+  "qWhenCharts": "Wann sitzt du an den Charts?",
+  "tokyoTime": "00:00–08:00 UTC · ruhig, technisch",
+  "londonTime": "07:00–16:00 UTC · höchstes Gold-Volumen",
+  "nyTime": "12:00–21:00 UTC · News-getrieben",
+  "allSessions": "Alle Sessions",
+  "allSessionsSub": "Schick mir alles, rund um die Uhr",
+  "timesNote": "Keine 3-Uhr-Pushes für Sessions, die du nie tradest.",
+  "qBroker": "Welchen Broker nutzt du?",
+  "brokerNone": "Noch keinen",
+  "brokerOther": "Anderer",
+  "optionalTag": "OPTIONAL",
+  "notifNever": "Verpasse nie deinen Einstieg",
+  "notifTitle": "Deine Zonen kommen an,\nbevor die Session öffnet",
+  "notifBody": "Zone bereit → Order gefüllt → jedes Ziel erreicht. Du bekommst nur Pushes, die zu deinem Profil passen.",
+  "notifBodyLive": "Live-Einstiege plus jedes Ziel-Update — nur für Signale, die zu deinem Profil passen.",
+  "notifNote": "Steuert, welche Signale dein Handy erreichen.",
+  "enableNotifs": "Mitteilungen aktivieren",
+  "maybeLater": "Vielleicht später",
+  "calcBuilding": "Wir bauen dein Trading-Profil…",
+  "calcSessions": "Deine Sessions werden eingerichtet…",
+  "calcLots": "Lot-Größen werden kalibriert…",
+  "calcFilter": "Dein Signal-Filter wird justiert…",
+  "resultReady": "DEIN PROFIL STEHT",
+  "youAreSniper": "Du bist ein Sniper.",
+  "youAreExecutor": "Du bist ein Executor.",
+  "resultZones": "Zonen kommen vor deiner Session — Orders gesetzt, kein Stress",
+  "resultInstant": "Sofort-Einstiege mit Gültigkeitsfenster",
+  "resultLadder": "Ziel-Leiter {weights}",
+  "@resultLadder": {
+    "placeholders": {
+      "weights": {
+        "type": "String"
+      }
+    }
+  },
+  "resultTp1": "{w}% schon am ersten Ziel sichern — fest verbucht",
+  "@resultTp1": {
+    "placeholders": {
+      "w": {
+        "type": "int"
+      }
+    }
+  },
+  "resultMaxRisk": "Max. \\${x} Risiko pro Trade",
+  "@resultMaxRisk": {
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "resultAccount": "Trades passend zu deinem Konto",
+  "showMyPlan": "Zeig mir meinen Plan",
+  "paywallTitle": "Teste Pro 7 Tage kostenlos",
+  "paywallUnlockMode": "Schalte dein komplettes {mode}-Setup frei. Heute 0 \\$.",
+  "@paywallUnlockMode": {
+    "placeholders": {
+      "mode": {
+        "type": "String"
+      }
+    }
+  },
+  "tlToday": "Heute",
+  "tlDay5": "Tag 5",
+  "tlDay7": "Tag 7",
+  "tlTodaySub": "Voller Zugriff — sofort freigeschaltet",
+  "tlDay5Sub": "Wir erinnern dich, bevor der Test endet",
+  "tlDay7Sub": "Abo startet — vorher jederzeit kündbar",
+  "yearly": "Jährlich",
+  "monthly": "Monatlich",
+  "bestDealCaps": "BESTER DEAL",
+  "bestDeal": "Bester Deal",
+  "perDay": "{x} / Tag",
+  "@perDay": {
+    "placeholders": {
+      "x": {
+        "type": "String"
+      }
+    }
+  },
+  "perMonth": "pro Monat",
+  "featZoneLadder": "Limit-Zonen-Signale mit kompletter Ziel-Leiter",
+  "featLiveLadder": "Live-Signale mit kompletter Ziel-Leiter",
+  "featPushes": "Pushes bei Order-Füllung & jedem Ziel",
+  "featLots": "Lot-Größen für dein Konto berechnet",
+  "featMt5": "Markt-News mit Gold-Relevanz & Wirtschaftskalender",
+  "trackRecord": "Bilanz: {wr}% Win-Rate über {n} getrackte Trades{rr}. Vergangene Ergebnisse garantieren keine zukünftigen.",
+  "@trackRecord": {
+    "placeholders": {
+      "wr": {
+        "type": "String"
+      },
+      "n": {
+        "type": "int"
+      },
+      "rr": {
+        "type": "String"
+      }
+    }
+  },
+  "startTrial": "7 Tage kostenlos starten",
+  "zeroToday": "Heute 0 \\$ · jederzeit in den Einstellungen kündbar",
+  "trialTermsMonthly": "7 Tage kostenlos, danach {price}/Monat. Verlängert sich automatisch, bis du kündigst. Jederzeit in Google Play kündbar.",
+  "trialTermsYearly": "7 Tage kostenlos, danach {price}/Jahr. Verlängert sich automatisch, bis du kündigst. Jederzeit in Google Play kündbar.",
+  "restorePurchase": "Kauf wiederherstellen",
+  "continueFree": "Mit Free-Plan weitermachen",
+  "plansLoading": "Pläne laden noch — versuch es gleich nochmal.",
+  "reminderToggle": "Erinnere mich vor Ende des Tests",
+  "continueBtn": "Weiter",
+  "histWinRate": "historische Win-Rate",
+  "newsTitle": "Markt-News",
+  "liveBadge": "Live",
+  "tabNews": "News",
+  "tabCalendar": "Kalender",
+  "newsUpdated": "Aktualisiert {ago} · zum Aktualisieren ziehen",
+  "@newsUpdated": {
+    "placeholders": {
+      "ago": {
+        "type": "String"
+      }
+    }
+  },
+  "justNow": "gerade eben",
+  "minAgo": "vor {n} Min",
+  "@minAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "hourAgo": "vor {n} Std",
+  "@hourAgo": {
+    "placeholders": {
+      "n": {
+        "type": "int"
+      }
+    }
+  },
+  "pausedTip": "Signale pausieren 30 Min vor High-Impact-Terminen — zum Schutz deiner Trades.",
+  "impactHighNews": "High Impact — kann Gold stark bewegen",
+  "impactMediumNews": "Medium Impact — Gold-Reaktion beobachten",
+  "impactLowNews": "Low Impact — kaum Wirkung auf Gold",
+  "eventHighTip": "High Impact — Signale pausieren 30 Min vor diesem Termin. Volatilität bei Gold erwartet.",
+  "eventMediumTip": "Medium Impact — Gold-Reaktion beobachten. Ist vs. Prognose entscheidet.",
+  "readFull": "Ganzen Artikel lesen",
+  "tapMore": "Tippen für mehr",
+  "tapDetails": "Tippen für Details",
+  "chipActual": "Ist",
+  "chipForecast": "Prognose",
+  "chipPrevious": "Zuvor",
+  "pushOnlyTrading": "Pushes nur, wenn du wirklich tradest"
+}

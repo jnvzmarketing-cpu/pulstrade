@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "3520181018",
+    "project_id": "pulstrade-fb01a",
+    "storage_bucket": "pulstrade-fb01a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3520181018:android:a9aee2d1c2d114ad6f32a3",
+        "android_client_info": {
+          "package_name": "com.pulstrade"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgqqGV0DkD1tansbvFcsAyGfwUyyHJPYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
