@@ -869,6 +869,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tlDay5Sub => 'We remind you before the trial ends';
 
   @override
+  String get tlDay7SubGoogle =>
+      'Subscription starts at €4.99/month or €19.99/year. Cancel anytime before in your Google Play account settings to avoid charges';
+
+  @override
   String get tlDay7Sub => 'Subscription starts — cancel anytime before';
 
   @override

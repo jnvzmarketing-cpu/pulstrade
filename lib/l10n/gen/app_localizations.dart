@@ -1538,6 +1538,12 @@ abstract class AppLocalizations {
   /// **'Wir erinnern dich, bevor der Test endet'**
   String get tlDay5Sub;
 
+  /// No description provided for @tlDay7SubGoogle.
+  ///
+  /// In de, this message translates to:
+  /// **'Das Abo startet für 4,99 €/Monat oder 19,99 €/Jahr. Jederzeit vorab in den Google Play-Kontoeinstellungen kündbar'**
+  String get tlDay7SubGoogle;
+
   /// No description provided for @tlDay7Sub.
   ///
   /// In de, this message translates to:

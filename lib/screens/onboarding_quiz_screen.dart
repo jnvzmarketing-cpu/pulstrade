@@ -872,7 +872,8 @@ class _State extends State<OnboardingQuizScreen> with TickerProviderStateMixin {
             _timelineRow(Icons.notifications_rounded, AppLocalizations.of(context).tlDay5,
                 AppLocalizations.of(context).tlDay5Sub, Obsidian.gold, txt, muted),
             _timelineRow(Icons.star_rounded, AppLocalizations.of(context).tlDay7,
-                AppLocalizations.of(context).tlDay7Sub, Obsidian.gold, txt, muted,
+                Platform.isIOS ? AppLocalizations.of(context).tlDay7Sub:
+                AppLocalizations.of(context).tlDay7SubGoogle, Obsidian.gold, txt, muted,
                 last: true),
           ]),
         ),
