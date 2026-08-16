@@ -871,7 +871,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get tlDay7SubGoogle =>
-      'Das Abo startet für 4,99 €/Monat oder 19,99 €/Jahr. Jederzeit vorab in den Google Play-Kontoeinstellungen kündbar';
+      'Das Abo startet für ##. Jederzeit vorab in den Google Play-Kontoeinstellungen kündbar';
 
   @override
   String get tlDay7Sub => 'Abo startet — vorher jederzeit kündbar';
