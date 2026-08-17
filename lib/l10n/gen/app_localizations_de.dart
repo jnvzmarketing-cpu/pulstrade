@@ -870,10 +870,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get tlDay5Sub => 'Wir erinnern dich, bevor der Test endet';
 
   @override
-  String get tlDay7SubGoogle =>
-      'Das Abo startet für ##. Jederzeit vorab in den Google Play-Kontoeinstellungen kündbar';
-
-  @override
   String get tlDay7Sub => 'Abo startet — vorher jederzeit kündbar';
 
   @override
