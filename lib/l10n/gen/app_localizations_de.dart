@@ -855,13 +855,6 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get abo_info_title => 'Wichtige Abo-Informationen';
-
-  @override
-  String get abo_info =>
-      'Ihr 7-tägiger kostenloser Testzeitraum endet genau 7 Tage nach Abschluss des Abos. Danach wird Ihr Google Play Konto automatisch mit ## belastet. Das Abonnement verlängert sich jährlich automatisch um denselben Zeitraum, sofern Sie es nicht mindestens 24 Stunden vor Ablauf des aktuellen Zeitraums kündigen. Sie können Ihr Abo jederzeit in den Kontoeinstellungen des Google Play Stores verwalten und kündigen.';
-
-  @override
   String get tlToday => 'Heute';
 
   @override

@@ -917,38 +917,6 @@ class _State extends State<OnboardingQuizScreen> with TickerProviderStateMixin {
                 _profile.mode == TradeMode.sniper ? 'Sniper' : 'Executor'),
             style: TextStyle(fontSize: 14, color: muted)),
         SizedBox(height: 18),
-        if (Platform.isAndroid) ...[
-          Container(
-            padding: EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: card,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(color: bord, width: 0.5),
-            ),
-            child: Column(children: [
-              Text(
-                AppLocalizations.of(context).abo_info_title,
-                style: TextStyle(
-                  fontSize: 12, // Klein, aber für Googles OCR-Scanner lesbar
-                  color: Colors.white, // Guter Kontrast, aber dezent
-                  height: 1.4,
-                ),
-                textAlign: TextAlign.center,
-              ),
-              Text(
-                AppLocalizations.of(context).abo_info.replaceAll(
-                    "##", '${_yearlySelected ? annualPrice : monthlyPrice}'),
-                style: TextStyle(
-                  fontSize: 12, // Klein, aber für Googles OCR-Scanner lesbar
-                  color: Colors.grey[600], // Guter Kontrast, aber dezent
-                  height: 1.4,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ]),
-          ),
-          SizedBox(height: 10),
-        ],
         // Trial timeline
         Container(
           padding: EdgeInsets.all(16),

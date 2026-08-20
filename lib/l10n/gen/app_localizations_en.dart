@@ -854,13 +854,6 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get abo_info_title => 'Important Subscription Information';
-
-  @override
-  String get abo_info =>
-      'Your 7-day free trial will end exactly 7 days after activation. After the trial period, your Google Play account will be automatically charged ##. The subscription renews automatically every year for the same price and period, unless cancelled at least 24 hours before the end of the current period. You can manage and cancel your subscription at any time in your Google Play Store account settings.';
-
-  @override
   String get tlToday => 'Today';
 
   @override
