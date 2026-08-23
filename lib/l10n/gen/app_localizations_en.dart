@@ -912,7 +912,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get startTrial => 'Start 7 days free';
+  String startTrialMonthly(Object price) {
+    return 'Start Subscription for $price/month';
+  }
+
+  @override
+  String startTrialYearly(Object price) {
+    return 'Start Subscription for $price/year';
+  }
 
   @override
   String get zeroToday => '\\\$0 today · cancel anytime in Settings';

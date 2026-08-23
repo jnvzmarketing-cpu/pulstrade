@@ -1616,11 +1616,17 @@ abstract class AppLocalizations {
   /// **'Bilanz: {wr}% Win-Rate über {n} getrackte Trades{rr}. Vergangene Ergebnisse garantieren keine zukünftigen.'**
   String trackRecord(String wr, int n, String rr);
 
-  /// No description provided for @startTrial.
+  /// No description provided for @startTrialMonthly.
   ///
   /// In de, this message translates to:
-  /// **'7 Tage kostenlos starten'**
-  String get startTrial;
+  /// **'Abo starten für {price}/Monat'**
+  String startTrialMonthly(Object price);
+
+  /// No description provided for @startTrialYearly.
+  ///
+  /// In de, this message translates to:
+  /// **'Abo starten für {price}/Jahr'**
+  String startTrialYearly(Object price);
 
   /// No description provided for @zeroToday.
   ///

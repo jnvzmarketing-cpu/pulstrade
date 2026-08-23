@@ -1057,7 +1057,13 @@ class _State extends State<OnboardingQuizScreen> with TickerProviderStateMixin {
           ),
 
         _primaryButton(
-          _purchasing ? null : AppLocalizations.of(context).startTrial,
+          _purchasing
+              ? null
+              : _yearlySelected
+                  ? AppLocalizations.of(context)
+                      .startTrialYearly(annualPrice ?? '—')
+                  : AppLocalizations.of(context)
+                      .startTrialMonthly(monthlyPrice ?? '—'),
           _purchasing ? null : _purchase,
           loading: _purchasing,
         ),

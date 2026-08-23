@@ -913,7 +913,14 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get startTrial => '7 Tage kostenlos starten';
+  String startTrialMonthly(Object price) {
+    return 'Abo starten für $price/Monat';
+  }
+
+  @override
+  String startTrialYearly(Object price) {
+    return 'Abo starten für $price/Jahr';
+  }
 
   @override
   String get zeroToday =>

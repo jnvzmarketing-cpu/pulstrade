@@ -724,7 +724,8 @@
       }
     }
   },
-  "startTrial": "7 Tage kostenlos starten",
+  "startTrialMonthly": "Abo starten für {price}/Monat",
+  "startTrialYearly": "Abo starten für {price}/Jahr",
   "zeroToday": "Heute 0 \\$ · jederzeit in den Einstellungen kündbar",
   "trialTermsMonthly": "7 Tage kostenlos, danach {price}/Monat. Verlängert sich automatisch, bis du kündigst. Jederzeit in Google Play kündbar.",
   "trialTermsYearly": "7 Tage kostenlos, danach {price}/Jahr. Verlängert sich automatisch, bis du kündigst. Jederzeit in Google Play kündbar.",
