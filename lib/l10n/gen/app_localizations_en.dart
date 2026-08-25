@@ -846,11 +846,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get showMyPlan => 'Show me my plan';
 
   @override
-  String get paywallTitle => 'Try Pro free for 7 days';
+  String get paywallTitle => 'Unlock PulsTrade Pro';
 
   @override
   String paywallUnlockMode(String mode) {
-    return 'Unlock your full $mode setup. \\\$0 today.';
+    return 'Unlock your full $mode setup.';
   }
 
   @override
@@ -870,6 +870,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tlDay7Sub => 'Subscription starts — cancel anytime before';
+
+  @override
+  String get year => 'year';
+
+  @override
+  String get month => 'month';
 
   @override
   String get yearly => 'Yearly';

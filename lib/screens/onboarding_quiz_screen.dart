@@ -982,10 +982,8 @@ class _State extends State<OnboardingQuizScreen> with TickerProviderStateMixin {
             child: _planCard(
               selected: _yearlySelected,
               title: AppLocalizations.of(context).yearly,
-              price: annualPrice ?? '—',
-              sub: perDay != null
-                  ? AppLocalizations.of(context).perDay(perDay)
-                  : AppLocalizations.of(context).bestDeal,
+              price: annualPrice == null ? '—' : '$annualPrice / ${AppLocalizations.of(context).year}',
+              sub: '',
               badge: AppLocalizations.of(context).bestDealCaps,
               isDark: isDark,
               onTap: () => setState(() => _yearlySelected = true),
@@ -996,8 +994,8 @@ class _State extends State<OnboardingQuizScreen> with TickerProviderStateMixin {
             child: _planCard(
               selected: !_yearlySelected,
               title: AppLocalizations.of(context).monthly,
-              price: monthlyPrice ?? '—',
-              sub: AppLocalizations.of(context).perMonth,
+              price: monthlyPrice == null ? '—' : '$monthlyPrice / ${AppLocalizations.of(context).month}',
+              sub: '',
               isDark: isDark,
               onTap: () => setState(() => _yearlySelected = false),
             ),

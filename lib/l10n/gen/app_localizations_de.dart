@@ -847,11 +847,11 @@ class AppLocalizationsDe extends AppLocalizations {
   String get showMyPlan => 'Zeig mir meinen Plan';
 
   @override
-  String get paywallTitle => 'Teste Pro 7 Tage kostenlos';
+  String get paywallTitle => 'PulsTrade pro freischalten';
 
   @override
   String paywallUnlockMode(String mode) {
-    return 'Schalte dein komplettes $mode-Setup frei. Heute 0 \\\$.';
+    return 'Schalte dein komplettes $mode-Setup frei.';
   }
 
   @override
@@ -871,6 +871,12 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get tlDay7Sub => 'Abo startet — vorher jederzeit kündbar';
+
+  @override
+  String get year => 'Jahr';
+
+  @override
+  String get month => 'Monat';
 
   @override
   String get yearly => 'Jährlich';

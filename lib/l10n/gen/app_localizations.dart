@@ -1499,13 +1499,13 @@ abstract class AppLocalizations {
   /// No description provided for @paywallTitle.
   ///
   /// In de, this message translates to:
-  /// **'Teste Pro 7 Tage kostenlos'**
+  /// **'PulsTrade pro freischalten'**
   String get paywallTitle;
 
   /// No description provided for @paywallUnlockMode.
   ///
   /// In de, this message translates to:
-  /// **'Schalte dein komplettes {mode}-Setup frei. Heute 0 \\\$.'**
+  /// **'Schalte dein komplettes {mode}-Setup frei.'**
   String paywallUnlockMode(String mode);
 
   /// No description provided for @tlToday.
@@ -1543,6 +1543,18 @@ abstract class AppLocalizations {
   /// In de, this message translates to:
   /// **'Abo startet — vorher jederzeit kündbar'**
   String get tlDay7Sub;
+
+  /// No description provided for @year.
+  ///
+  /// In de, this message translates to:
+  /// **'Jahr'**
+  String get year;
+
+  /// No description provided for @month.
+  ///
+  /// In de, this message translates to:
+  /// **'Monat'**
+  String get month;
 
   /// No description provided for @yearly.
   ///

@@ -677,8 +677,8 @@
   },
   "resultAccount": "Trades passend zu deinem Konto",
   "showMyPlan": "Zeig mir meinen Plan",
-  "paywallTitle": "Teste Pro 7 Tage kostenlos",
-  "paywallUnlockMode": "Schalte dein komplettes {mode}-Setup frei. Heute 0 \\$.",
+  "paywallTitle": "PulsTrade pro freischalten",
+  "paywallUnlockMode": "Schalte dein komplettes {mode}-Setup frei.",
   "@paywallUnlockMode": {
     "placeholders": {
       "mode": {
@@ -692,6 +692,8 @@
   "tlTodaySub": "Voller Zugriff — sofort freigeschaltet",
   "tlDay5Sub": "Wir erinnern dich, bevor der Test endet",
   "tlDay7Sub": "Abo startet — vorher jederzeit kündbar",
+  "year": "Jahr",
+  "month": "Monat",
   "yearly": "Jährlich",
   "monthly": "Monatlich",
   "bestDealCaps": "BESTER DEAL",
