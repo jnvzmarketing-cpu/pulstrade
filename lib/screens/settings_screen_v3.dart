@@ -129,7 +129,7 @@ class _SettingsScreenV3State extends State<SettingsScreenV3> {
                   subtitle: Text(t.notifAllSub,
                       style: TextStyle(fontSize: 12, color: Obsidian.textMid)),
                   value: _allSignals,
-                  activeColor: Obsidian.gold,
+                  activeThumbColor: Obsidian.gold,
                   onChanged: _toggleSignals,
                 ),
                 Divider(height: 1, color: Obsidian.strokeSub),
@@ -156,7 +156,7 @@ class _SettingsScreenV3State extends State<SettingsScreenV3> {
                     activeTrackColor: Obsidian.gold,
                     inactiveTrackColor: Obsidian.cardAlt,
                     thumbColor: Obsidian.gold,
-                    overlayColor: Obsidian.gold.withOpacity(0.12),
+                    overlayColor: Obsidian.gold.withValues(alpha:0.12),
                     trackHeight: 4,
                   ),
                   child: Slider(
@@ -211,7 +211,7 @@ class _SettingsScreenV3State extends State<SettingsScreenV3> {
                           height: 1.4)),
                   isThreeLine: true,
                   value: _beProtect,
-                  activeColor: Obsidian.gold,
+                  activeThumbColor: Obsidian.gold,
                   onChanged: _toggleBe,
                 ),
               ]),
@@ -247,7 +247,7 @@ class _SettingsScreenV3State extends State<SettingsScreenV3> {
               Container(
                 width: 38, height: 38,
                 decoration: BoxDecoration(
-                  color: statusColor.withOpacity(0.14),
+                  color: statusColor.withValues(alpha:0.14),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(isPro ? Icons.workspace_premium : Icons.person,
@@ -441,7 +441,7 @@ class _SettingsScreenV3State extends State<SettingsScreenV3> {
           Container(
             width: 34, height: 34,
             decoration: BoxDecoration(
-              color: tint.withOpacity(0.14),
+              color: tint.withValues(alpha:0.14),
               borderRadius: BorderRadius.circular(9),
             ),
             child: Icon(icon, size: 18, color: tint),
