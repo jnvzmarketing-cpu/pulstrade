@@ -58,3 +58,6 @@ pubspec.yaml.backup_*
 lib/config/supabase_config.dart
 *.jks
 key.properties
+assets/res/
+android/build/
+lib/main_old.dart
