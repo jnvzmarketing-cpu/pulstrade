@@ -103,10 +103,7 @@ class Signal {
   final MtfConfirmation? mtf;
   final DateTime timestamp;
   final String status; // active | filled | closed | cancelled
-<<<<<<< HEAD
-=======
   final double? pnlR; // aus signals.pnl_r
->>>>>>> 27f0b96b88453bf22636d695e1635d9bd6c2e092
 
   const Signal({
     this.id,
@@ -131,10 +128,7 @@ class Signal {
     this.mtf,
     this.status = 'active',
     required this.timestamp,
-<<<<<<< HEAD
-=======
     this.pnlR,
->>>>>>> 27f0b96b88453bf22636d695e1635d9bd6c2e092
   });
 
   // ── Convenience ─────────────────────────────────────────────────────
@@ -223,8 +217,6 @@ class Signal {
   }
 
   // ── Parsing ─────────────────────────────────────────────────────────
-<<<<<<< HEAD
-=======
   /// Zeile aus der Supabase-Tabelle signals.
   factory Signal.fromRow(Map<String, dynamic> r) {
     double? d(v) => v == null ? null : (v as num).toDouble();
@@ -255,7 +247,6 @@ class Signal {
     );
   }
 
->>>>>>> 27f0b96b88453bf22636d695e1635d9bd6c2e092
   factory Signal.fromJson(Map<String, dynamic> j) {
     MtfConfirmation? mtf;
     if (j['mtf'] != null && j['mtf'] is Map) {
